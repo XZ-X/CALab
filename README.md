@@ -1,2 +1,2 @@
-This is my labs of CA(Computer Architecture) 
+This is my labs of CA(Computer Architecture)  
 
