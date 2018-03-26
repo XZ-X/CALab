@@ -10,7 +10,7 @@ parser.add_option('--l1isz', help="L1 instruction cache size")
 parser.add_option('--l1dsz', help="L1 data cache size")
 parser.add_option('--l2sz', help="Unified L2 cache size")
 parser.add_option('--clk',help="clock cycle frequency")
-
+parser.add_option('--blksz',help="block size")
 (options, args) = parser.parse_args()
 
 
@@ -39,6 +39,8 @@ system.cpu=TimingSimpleCPU()
 system.membus = SystemXBar()
 
 #cache
+if options and options.blksz:
+	system.cache_line_size =options.blksz
 
 system.cpu.icache= L1ICache(options)
 system.cpu.dcache= L1DCache(options)
